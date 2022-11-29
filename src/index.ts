@@ -37,6 +37,7 @@ interface Heroe {
     habilidad1: string;
     habilidad2: string;
     habilidad4: string;
+    mostrarHp: () => void;
 
 }
 
@@ -49,7 +50,10 @@ const personaje: Heroe = {
     habilidad1: habilidad1,
     habilidad2: habilidad2,
     habilidad4: habilidad4,
-    habilidades: [habilidad1, habilidad2, habilidad4, lvl, state,player, heroe]
+    habilidades: [habilidad1, habilidad2, habilidad4, lvl, state,player, heroe],
+    mostrarHp(){
+        console.log('El hp actual del heroe es: ' + this.hp);
+    }
 }
 
 console.table(personaje);
@@ -98,8 +102,10 @@ console.log(multiplicarCuracion(0.2,0.3,h));
 
 function curar(personaje:Heroe,curarX:number): void {
 
+    personaje.mostrarHp();
     personaje.hp += curarX;
-    console.log(personaje.hp + ' nuevo hp del heroe');
+    console.log('El hp modificado del heroe es: ' + personaje.hp);
+
 }
 
 curar(personaje,multiplicarCuracion(0.2,0.3,h));
