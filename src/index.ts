@@ -102,5 +102,5 @@ function curar(personaje:Heroe,curarX:number): void {
     console.log(personaje.hp + ' nuevo hp del heroe');
 }
 
-curar(personaje,0.2);
+curar(personaje,multiplicarCuracion(0.2,0.3,h));
 console.table(personaje);
