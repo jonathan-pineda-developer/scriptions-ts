@@ -17,7 +17,11 @@ console.log(player, hp);
 let habilidad1: string = 'Daño explosivo';
 let habilidad2: string = 'Control';
 let habilidad4: string = 'Movilidad';
-
+/*variables extras */
+let distrito: string = 'NDER';
+let canton: string = 'Central';
+let provincia: string = 'Eltha';
+let codigo: number = 987;
 let habilidades: (boolean | string | number)[] = ['Protección', 'Curación', 'Daño explosivo',15,82, true,'bot','NOREEH'];
 habilidades.push(0.5);
 console.log(habilidades);
@@ -37,10 +41,17 @@ interface Heroe {
     habilidad1: string;
     habilidad2: string;
     habilidad4: string;
+    direccion: Direccion;
     mostrarHp: () => void;
+    mostrarDireccion: () => void;
 
 }
-
+interface Direccion {
+    distrito: string;
+    canton: string;
+    provincia: string;
+    codigo: number;
+}
 const personaje: Heroe = {
     heroe: heroe,
     player: player,
@@ -53,6 +64,15 @@ const personaje: Heroe = {
     habilidades: [habilidad1, habilidad2, habilidad4, lvl, state,player, heroe],
     mostrarHp(){
         console.log('El hp actual del heroe es: ' + this.hp);
+    },
+    direccion: {
+        distrito: distrito,
+        canton: canton,
+        provincia: provincia,
+        codigo: codigo
+    },
+    mostrarDireccion(){
+        console.log('la ubicacion del heroe:\n Distrito: ' + this.direccion.distrito + ',\n Canton: ' + this.direccion.canton + ', \n Provincia: ' + this.direccion.provincia + ', \n Codigo:' + this.direccion.codigo);
     }
 }
 
@@ -109,4 +129,5 @@ function curar(personaje:Heroe,curarX:number): void {
 }
 
 curar(personaje,multiplicarCuracion(0.2,0.3,h));
+const direccion = personaje.mostrarDireccion();
 console.table(personaje);
