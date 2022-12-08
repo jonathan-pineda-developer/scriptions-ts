@@ -1,3 +1,4 @@
+let volumen : number = 100;
 let tiempo : number = 4;
 let cancion : string = 'Circuits';
 let autor : string = 'Klangkarussell';
