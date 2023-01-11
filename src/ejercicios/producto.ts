@@ -1,4 +1,4 @@
-interface Producto {
+export interface Producto {
     nombre: string;
     precio: number;
 }
@@ -13,7 +13,7 @@ const tuberculo: Producto = {
     precio: 100
 }
 
-function impuestoSV( productos: Producto[]): [number, number] {
+export function impuestoSV( productos: Producto[]): [number, number] {
     let impuesto = 0;
 
     productos.forEach( ({precio})=> { 
